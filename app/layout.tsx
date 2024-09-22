@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "./components/navbar/Navbar";
 
 export const metadata: Metadata = {
   title: "TOS Card Game Deck Creator",
@@ -14,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         className={`antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
