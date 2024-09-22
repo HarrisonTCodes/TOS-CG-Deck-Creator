@@ -4,7 +4,7 @@ import { FaGithub, FaInfoCircle } from "react-icons/fa";
 
 export default function Navbar() {
     return (
-        <nav className="w-full border-b-2 py-4 px-4 flex justify-between items-center z-10 bg-blue-800">
+        <nav className="w-full border-b-2 p-4 flex justify-between items-center z-10 bg-blue-800">
             <h1 className="text-2xl text-white font-medium">TOS Deck Creator</h1>
             <section className="flex gap-4">
                 <Link href={"https://github.com/HarrisonTCodes"} title="Github">
