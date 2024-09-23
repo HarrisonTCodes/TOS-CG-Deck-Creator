@@ -2,9 +2,9 @@
 
 import { Card } from "@/app/interfaces/Card";
 import { SearchbarParameters } from "@/app/interfaces/SearchableParameters";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 
-export default function Searchbar({ label, valueState, setValueState, setMatchingState } : SearchbarParameters) {
+export default function Searchbar({ label, valueState, setValueState, setMatchingState, setFocusState } : SearchbarParameters) {
     function getCardsFromPrompt(prompt: string) {
         fetch(`/api/cards?prompt=${prompt}`)
         .then(response => response.json())
@@ -21,6 +21,11 @@ export default function Searchbar({ label, valueState, setValueState, setMatchin
         getCardsFromPrompt(event.target.value)
     }
 
+    // Initialise matching data
+    useEffect(() => {
+        getCardsFromPrompt("")
+    }, [])
+
     return (
         <input
             type="text"
@@ -28,6 +33,8 @@ export default function Searchbar({ label, valueState, setValueState, setMatchin
             className="border-2 border-gray-400 focus:border-blue-800 focus:outline-none text-lg rounded-xl w-[90%] max-w-[500px] p-2"
             onChange={onChange}
             value={valueState}
+            onFocus={() => setFocusState(true)}
+            onBlur={() => setFocusState(false)}
         />
     )
 }

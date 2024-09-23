@@ -5,4 +5,5 @@ export interface SearchbarParameters {
     valueState: string
     setValueState: (value: string) => void
     setMatchingState: (value: Card[]) => void
+    setFocusState: (value: boolean) => void
 }
