@@ -15,5 +15,10 @@ const config: Config = {
     },
   },
   plugins: [],
+  safelist: [
+    "text-green-600",
+    "text-red-600",
+    "text-stone-600"
+  ]
 };
 export default config;
