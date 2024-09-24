@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "@/app/interfaces/Card";
-import { SearchbarParameters } from "@/app/interfaces/SearchableParameters";
+import { SearchbarParameters } from "@/app/interfaces/SearchbarParameters";
 import { ChangeEvent, useEffect } from "react";
 
 export default function Searchbar({ label, valueState, setValueState, setMatchingState, setFocusState } : SearchbarParameters) {
