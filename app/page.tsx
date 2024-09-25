@@ -34,7 +34,7 @@ export default function Home() {
         setFocusState={setSearchbarFocus}
       />
       <SearchOptions optionsState={cardsMatchingSearch} visible={searchbarFocus} />
-      <section className="flex flex-wrap justify-center gap-2 py-4">
+      <section className="flex flex-wrap justify-center gap-2 py-4 max-w-[500px]">
         {selectedCards.map((card: CardParameters, index: number) => <Card card={card} key={index} />)}
       </section>
     </main>
