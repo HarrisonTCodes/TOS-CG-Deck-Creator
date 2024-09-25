@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/app/interfaces/Card";
+import { CardParameters } from "@/app/interfaces/CardParameters";
 import { SearchbarParameters } from "@/app/interfaces/SearchbarParameters";
 import { ChangeEvent, useEffect } from "react";
 
@@ -8,7 +8,7 @@ export default function Searchbar({ label, valueState, setValueState, setMatchin
     function getCardsFromPrompt(prompt: string) {
         fetch(`/api/cards?prompt=${prompt}`)
         .then(response => response.json())
-        .then((cards: Card[]) => {
+        .then((cards: CardParameters[]) => {
             setMatchingState(cards)
         })
     }

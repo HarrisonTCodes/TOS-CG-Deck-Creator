@@ -1,4 +1,4 @@
-import { Card } from "@/app/interfaces/Card";
+import { CardParameters } from "@/app/interfaces/CardParameters";
 import { useSelectedCardsStore } from "@/app/page";
 
 // Function to convert string into title format (sufficient for all cases here)
@@ -16,7 +16,7 @@ function getColor(faction: "town" | "mafia" | "neutral") {
     }
 }
 
-export default function SearchOption({ option } : {option: Card}) {
+export default function SearchOption({ option } : {option: CardParameters}) {
     const { selectedCards, setSelectedCards } = useSelectedCardsStore()
 
     return (

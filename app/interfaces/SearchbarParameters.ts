@@ -1,9 +1,9 @@
-import { Card } from "./Card"
+import { CardParameters } from "./CardParameters"
 
 export interface SearchbarParameters {
     label?: string
     valueState: string
     setValueState: (value: string) => void
-    setMatchingState: (value: Card[]) => void
+    setMatchingState: (value: CardParameters[]) => void
     setFocusState: (value: boolean) => void
 }

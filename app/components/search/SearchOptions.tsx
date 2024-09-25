@@ -1,8 +1,8 @@
-import { Card } from "@/app/interfaces/Card";
+import { CardParameters } from "@/app/interfaces/CardParameters";
 import SearchOption from "./SearchOption";
 import { useState } from "react";
 
-export default function SearchOptions({ optionsState, visible } : { optionsState: Card[], visible: boolean }) {
+export default function SearchOptions({ optionsState, visible } : { optionsState: CardParameters[], visible: boolean }) {
     // Flag for when options are hovered (and clicked), preventing options from closing and click not being registered
     const [hovered, setHovered] = useState<boolean>(false)
 
@@ -12,7 +12,7 @@ export default function SearchOptions({ optionsState, visible } : { optionsState
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            {optionsState.map((option: Card, index) => {
+            {optionsState.map((option: CardParameters, index) => {
                 return (
                     <SearchOption 
                         option={option}
