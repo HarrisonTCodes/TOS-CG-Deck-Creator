@@ -4,6 +4,7 @@ import { CardParameters } from "./interfaces/CardParameters";
 import { create } from "zustand"
 import Searchbar from "./components/search/Searchbar";
 import SearchOptions from "./components/search/SearchOptions";
+import Card from "./components/card/Card";
 
 // Zustand selected cards store
 interface SelectedCardsStore {
@@ -33,7 +34,9 @@ export default function Home() {
         setFocusState={setSearchbarFocus}
       />
       <SearchOptions optionsState={cardsMatchingSearch} visible={searchbarFocus} />
-      {selectedCards.map((card: CardParameters, index: number) => <p key={index}>{card.name}</p>)}
+      <section className="flex flex-wrap justify-center gap-2 py-4">
+        {selectedCards.map((card: CardParameters, index: number) => <Card card={card} key={index} />)}
+      </section>
     </main>
   );
 }

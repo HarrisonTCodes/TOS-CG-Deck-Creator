@@ -2,127 +2,127 @@ import { NextRequest } from "next/server";
 
 const cards = [
     {
-        name: "bodyguard",
+        name: "Bodyguard",
         value: 4,
         faction: "town"
     },
     {
-        name: "deputy",
+        name: "Deputy",
         value: 4,
         faction: "town"
     },
     {
-        name: "doctor",
+        name: "Doctor",
         value: 4,
         faction: "town"
     },
     {
-        name: "investigator",
+        name: "Investigator",
         value: 6,
         faction: "town"
     },
     {
-        name: "mayor",
+        name: "Mayor",
         value: 8,
         faction: "town"
     },
     {
-        name: "medium",
+        name: "Medium",
         value: 3,
         faction: "town"
     },
     {
-        name: "sheriff",
+        name: "Sheriff",
         value: 7,
         faction: "town"
     },
     {
-        name: "survivor",
+        name: "Survivor",
         value: 4,
         faction: "town"
     },
     {
-        name: "veteran",
+        name: "Veteran",
         value: 3,
         faction: "town"
     },
     {
-        name: "vigilante",
+        name: "Vigilante",
         value: 5,
         faction: "town"
     },
     {
-        name: "townie",
+        name: "Townie",
         value: 1,
         faction: "town"
     },
     {
-        name: "peaceful townie",
+        name: "Peaceful Townie",
         value: -1,
         faction: "town"
     },
     {
-        name: "spiteful townie",
+        name: "Spiteful Townie",
         value: -1,
         faction: "town"
     },
     {
-        name: "politician",
+        name: "Politician",
         value: -2,
         faction: "town"
     },
     {
-        name: "godfather",
+        name: "Godfather",
         value: -8,
         faction: "mafia"
     },
     {
-        name: "janitor",
+        name: "Janitor",
         value: -8,
         faction: "mafia"
     },
     {
-        name: "mafioso",
+        name: "Mafioso",
         value: -6,
         faction: "mafia"
     },
     {
-        name: "consigliere",
+        name: "Consigliere",
         value: -10,
         faction: "mafia"
     },
     {
-        name: "blackmailer",
+        name: "Blackmailer",
         value: -9,
         faction: "mafia"
     },
     {
-        name: "amnesiac",
+        name: "Amnesiac",
         value: 0,
         faction: "neutral"
     },
     {
-        name: "executioner",
+        name: "Executioner",
         value: -4,
         faction: "neutral"
     },
     {
-        name: "jester",
+        name: "Jester",
         value: -1,
         faction: "neutral"
     },
     {
-        name: "serial killer",
+        name: "Serial Killer",
         value: -8,
         faction: "neutral"
     },
     {
-        name: "werewolf",
+        name: "Werewolf",
         value: -9,
         faction: "neutral"
     },
     {
-        name: "witch",
+        name: "Witch",
         value: -5,
         faction: "neutral"
     }
@@ -131,5 +131,5 @@ const cards = [
 export function GET(request: NextRequest) {
     const prompt = request.nextUrl.searchParams.get("prompt") ?? ""
 
-    return Response.json(cards.filter((card) => card.name.includes(prompt.toLowerCase())))
+    return Response.json(cards.filter((card) => card.name.toLowerCase().includes(prompt.toLowerCase())))
 }

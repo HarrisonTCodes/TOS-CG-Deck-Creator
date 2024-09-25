@@ -8,18 +8,11 @@ export default function SearchOptions({ optionsState, visible } : { optionsState
 
     return (
         <div 
-            className={`flex flex-col w-[90%] max-w-[500px] cursor-pointer z-1 absolute overflow-y-scroll max-h-60 mt-14 rounded-xl border-2 bg-white ${optionsState.length > 0 && (visible || hovered) ? "visible" : "invisible"}`}
+            className={`flex flex-col w-[90%] max-w-[500px] cursor-pointer z-1 absolute overflow-y-scroll max-h-52 mt-14 rounded-xl border-2 bg-white ${optionsState.length > 0 && (visible || hovered) ? "visible" : "invisible"}`}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            {optionsState.map((option: CardParameters, index) => {
-                return (
-                    <SearchOption 
-                        option={option}
-                        key={index} 
-                    />
-                )
-            })}
+            {optionsState.map((option: CardParameters, index) => <SearchOption option={option} key={index} />)}
         </div>
     )
 }
