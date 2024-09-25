@@ -1,4 +1,5 @@
 import { Card } from "@/app/interfaces/Card";
+import { useSelectedCardsStore } from "@/app/page";
 
 // Function to convert string into title format (sufficient for all cases here)
 function title(str: string) {
@@ -16,10 +17,12 @@ function getColor(faction: "town" | "mafia" | "neutral") {
 }
 
 export default function SearchOption({ option } : {option: Card}) {
+    const { selectedCards, setSelectedCards } = useSelectedCardsStore()
+
     return (
         <button 
-            className={`text-lg border py-2 text-${getColor(option.faction)}-600 font-bold`} 
-            onClick={() => console.log(option.name)}
+            className={`text-lg border py-2 text-${getColor(option.faction)}-600 font-bold active:bg-stone-200 transition-colors`} 
+            onClick={() => setSelectedCards([...selectedCards, option])}
         >
             {title(option.name)}
         </button>
