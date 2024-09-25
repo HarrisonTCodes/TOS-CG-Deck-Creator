@@ -8,10 +8,10 @@ export default function Navbar() {
             <h1 className="text-2xl text-white font-medium">TOS Deck Creator</h1>
             <section className="flex gap-4">
                 <Link href={"https://github.com/HarrisonTCodes"} title="Github">
-                    <FaGithub size={32} color="ffffff" />
+                    <FaGithub size={32} color="ffffff" className="text-white" />
                 </Link>
                 <Link href={"https://town-of-salem.fandom.com/wiki/Town_of_Salem_Card_Game"} title="Info on game">
-                    <FaInfoCircle size={32} color="ffffff" />
+                    <FaInfoCircle size={32} color="ffffff" className="text-white" />
                 </Link>
             </section>
         </nav>
