@@ -14,11 +14,13 @@ export default function Searchbar({ label, valueState, setValueState, setMatchin
     }
 
     function onChange(event: ChangeEvent<HTMLInputElement>) {
-        setValueState(event.target.value)
-        /* TODO: Make this more efficient before production.
-        This makes an API call every time the input value changes, which may be overkill
-        */
-        getCardsFromPrompt(event.target.value)
+        const searchPrompt = event.target.value
+        setValueState(searchPrompt)
+        /* Only search on every 2 character changes and when prompt is less than 4 characters, or prompt is reset.
+           This is to try and reduce calls to the API and improve efficiency */
+        if ((searchPrompt.length % 2 != 0 && searchPrompt.length < 4) || searchPrompt.length == 0) {
+            getCardsFromPrompt(searchPrompt)
+        }
     }
 
     // Initialise matching data
