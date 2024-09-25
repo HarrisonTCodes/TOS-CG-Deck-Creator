@@ -18,7 +18,10 @@ const config: Config = {
   safelist: [
     "text-green-600",
     "text-red-600",
-    "text-stone-600"
+    "text-stone-600",
+    "bg-green-400",
+    "bg-red-400",
+    "bg-stone-400"
   ]
 };
 export default config;
