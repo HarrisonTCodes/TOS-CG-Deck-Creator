@@ -32,7 +32,7 @@ export default function Searchbar({ label, valueState, setValueState, setMatchin
         <input
             type="text"
             placeholder={label}
-            className="border-2 border-gray-400 focus:border-blue-800 focus:outline-none text-lg rounded-xl w-[90%] max-w-[500px] p-2"
+            className="border-2 border-gray-400 focus:border-amber-700 focus:outline-none text-lg rounded-xl w-[90%] max-w-[500px] p-2"
             onChange={onChange}
             value={valueState}
             onFocus={() => setFocusState(true)}
