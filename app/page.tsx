@@ -1,23 +1,11 @@
 "use client";
 import { useState } from "react";
 import { CardParameters } from "./interfaces/CardParameters";
-import { create } from "zustand"
 import Searchbar from "./components/search/Searchbar";
 import SearchOptions from "./components/search/SearchOptions";
 import Card from "./components/card/Card";
 import Badge from "./components/badge/Badge";
-import { getValueString } from "./utils";
-
-// Zustand selected cards store
-interface SelectedCardsStore {
-  selectedCards: CardParameters[]
-  setSelectedCards: (value: CardParameters[]) => void
-}
-
-export const useSelectedCardsStore = create<SelectedCardsStore>()((set) => ({
-  selectedCards: new Array<CardParameters>(),
-  setSelectedCards: (selectedCards: CardParameters[]) => set({ selectedCards })
-}))
+import { getValueString, useSelectedCardsStore } from "./utils";
 
 // Main page
 export default function Home() {

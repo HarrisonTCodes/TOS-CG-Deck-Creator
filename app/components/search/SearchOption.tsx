@@ -1,6 +1,5 @@
 import { CardParameters } from "@/app/interfaces/CardParameters";
-import { useSelectedCardsStore } from "@/app/page";
-import { getColor, getValueString } from "@/app/utils";
+import { getColor, getValueString, useSelectedCardsStore } from "@/app/utils";
 
 export default function SearchOption({ option } : {option: CardParameters}) {
     const { selectedCards, setSelectedCards } = useSelectedCardsStore()

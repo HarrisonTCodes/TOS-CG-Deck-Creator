@@ -1,6 +1,5 @@
 import { CardParameters } from "@/app/interfaces/CardParameters";
-import { useSelectedCardsStore } from "@/app/page";
-import { getColor, getValueString } from "@/app/utils";
+import { getColor, getValueString, useSelectedCardsStore } from "@/app/utils";
 import Image from "next/image"
 
 // Function to get image, handle edge cases of Peaceful/Spiteful Townie and Politician
