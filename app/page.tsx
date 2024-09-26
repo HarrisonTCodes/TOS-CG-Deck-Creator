@@ -41,7 +41,11 @@ export default function Home() {
         <Badge label={`Deck Value: ${getValueString(selectedCards.reduce((accumulator, card) => accumulator + card.value, 0))}`} />
       </section>
       <section className="flex flex-wrap justify-center gap-2 max-w-[500px]">
-        {selectedCards.map((card: CardParameters, index: number) => <Card card={card} key={index} />)}
+        {selectedCards.length > 0 ?
+          selectedCards.map((card: CardParameters, index: number) => <Card card={card} key={index} />)
+          :
+          <p className="text-center text-xl text-stone-400 mt-36">Use the search bar above to add cards<br />(and click to remove them)</p>
+        }
       </section>
     </main>
   );
